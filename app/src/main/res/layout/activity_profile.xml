@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="profileViewModel"
+            type="tin.thurein.haulio_test.viewmodels.ProfileViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.ProfileActivity">
+        <include
+            layout="@layout/app_bar_layout"
+            bind:headerViewModel="@{profileViewModel}"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/profile_image_dimen"
+            android:layout_height="@dimen/profile_image_dimen"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_gravity="center_horizontal"
+            app:imageUri="@{profileViewModel.profilePhoto}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{profileViewModel.givenName}"
+            android:padding="@dimen/spacing_small"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:padding="@dimen/spacing_normal"
+            android:text="@{profileViewModel.jobTitle}"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvJobs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </LinearLayout>
+</layout>

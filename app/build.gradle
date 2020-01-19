@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.google.gms.google-services'
+
+android {
+
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["compileSdkVersion"]
+    buildToolsVersion globalConfiguration["buildToolVersion"]
+
+    compileOptions.incremental = false
+
+    defaultConfig {
+        applicationId "tin.thurein.haulio_test"
+        minSdkVersion globalConfiguration["minSdkVersion"]
+        targetSdkVersion globalConfiguration["targetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.incremental": "true"]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':data')
+    implementation project(':domain')
+    implementation project(':utils')
+
+    implementation rootProject.ext.kotlinStdlib
+    implementation rootProject.ext.androidxCompat
+    implementation rootProject.ext.androidxKtx
+    implementation rootProject.ext.constraintlayout
+
+    implementation rootProject.ext.recyclerView
+
+    implementation rootProject.ext.swipeRefreshLayout
+
+    implementation rootProject.ext.room
+    implementation rootProject.ext.rxRoom
+    implementation rootProject.ext.roomKtx
+
+    annotationProcessor rootProject.ext.roomAnnotationProcessor
+    kapt rootProject.ext.roomAnnotationProcessor
+
+    implementation rootProject.ext.javaxAnnotation
+    implementation rootProject.ext.javaxInject
+
+    implementation rootProject.ext.dagger
+    implementation rootProject.ext.daggerSupport
+    annotationProcessor rootProject.ext.daggerProcessor
+    annotationProcessor rootProject.ext.daggerCompiler
+    kapt rootProject.ext.kaptDagger
+    kapt rootProject.ext.daggerProcessor
+
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.rxJava
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.retrofitGsonConverter
+    implementation rootProject.ext.retrofitRxJava2Adapter
+    implementation rootProject.ext.retrofitLoggingInterceptors
+
+    testImplementation rootProject.ext.junit
+    androidTestImplementation rootProject.ext.androidxJunit
+    androidTestImplementation rootProject.ext.espresso
+
+    // map
+    implementation rootProject.ext.legacySupport
+    implementation rootProject.ext.googleMap
+
+    // google auth
+    implementation rootProject.ext.googleAuth
+
+    implementation rootProject.ext.glide
+    annotationProcessor rootProject.ext.glideCompiler
+    kapt rootProject.ext.glideCompiler
+
+    implementation rootProject.ext.circleImageView
+
+    implementation rootProject.ext.googleGmsService
+}

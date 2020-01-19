@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="mapsViewModel"
+            type="tin.thurein.haulio_test.viewmodels.MapsViewModel" />
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.MapsActivity">
+        <include
+            android:id="@+id/app_bar_layout"
+            layout="@layout/app_bar_layout"
+            bind:headerViewModel="@{mapsViewModel}"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_bar_layout"
+            android:drawableLeft="@drawable/search"
+            android:drawableStart="@drawable/search"
+            android:drawablePadding="@dimen/spacing_normal"
+            android:background="@android:color/white"
+            android:hint="@string/search"
+            android:textSize="16sp"
+            android:padding="@dimen/spacing_normal" />
+
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/etSearch"
+            android:layout_above="@id/profileLayout"
+            android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+        <LinearLayout
+            android:id="@+id/profileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_normal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/profile_image_dimen"
+                android:layout_height="@dimen/profile_image_dimen"
+                android:padding="@dimen/spacing_small"
+                app:imageUri="@{mapsViewModel.profilePhoto}"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_small"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:text="@{mapsViewModel.givenName}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{mapsViewModel.jobNumber}"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

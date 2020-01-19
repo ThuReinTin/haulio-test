@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="mainViewModel"
+            type="tin.thurein.haulio_test.viewmodels.MainViewModel" />
+    </data>
+    <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.MainActivity">
+
+        <include
+            layout="@layout/app_bar_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            bind:mainViewModel="@{mainViewModel}"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_drawer"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            bind:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:background="@android:color/white"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/darker_gray" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

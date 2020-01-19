@@ -1,0 +1,73 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["compileSdkVersion"]
+    buildToolsVersion globalConfiguration["buildToolVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["minSdkVersion"]
+        targetSdkVersion globalConfiguration["targetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.incremental":"true"]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":domain")
+
+    implementation rootProject.ext.kotlinStdlib
+    implementation rootProject.ext.androidxCompat
+    implementation rootProject.ext.androidxKtx
+
+    implementation rootProject.ext.room
+    implementation rootProject.ext.rxRoom
+    annotationProcessor rootProject.ext.roomAnnotationProcessor
+    kapt rootProject.ext.roomAnnotationProcessor
+
+    implementation rootProject.ext.javaxAnnotation
+    implementation rootProject.ext.javaxInject
+
+    implementation rootProject.ext.dagger
+    implementation rootProject.ext.daggerSupport
+    annotationProcessor rootProject.ext.daggerProcessor
+    annotationProcessor rootProject.ext.daggerCompiler
+    kapt rootProject.ext.kaptDagger
+    kapt rootProject.ext.daggerProcessor
+
+    implementation rootProject.ext.retrofit
+    implementation rootProject.ext.rxJava
+    implementation rootProject.ext.rxAndroid
+    implementation rootProject.ext.retrofitGsonConverter
+    implementation rootProject.ext.retrofitRxJava2Adapter
+    implementation rootProject.ext.retrofitLoggingInterceptors
+
+    testImplementation rootProject.ext.junit
+    androidTestImplementation rootProject.ext.androidxJunit
+    androidTestImplementation rootProject.ext.espresso
+    testImplementation rootProject.ext.roomTest
+}

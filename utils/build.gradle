@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // json converter
+    implementation rootProject.ext.googleGson
+    implementation rootProject.ext.json
+
+    implementation rootProject.ext.commonText
+    implementation rootProject.ext.kotlinStdlib
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

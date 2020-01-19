@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "299637047634",
+    "firebase_url": "https://haulio-1579285083050.firebaseio.com",
+    "project_id": "haulio-1579285083050",
+    "storage_bucket": "haulio-1579285083050.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299637047634:android:77cfed7b461159187b7a8b",
+        "android_client_info": {
+          "package_name": "tin.thurein.haulio_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299637047634-e2p3jpvr6prshbo97c3rh4oksutesves.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tin.thurein.haulio_test",
+            "certificate_hash": "95e83f56c36f43c1b8ff4b8df2ae9a5f53eb0f87"
+          }
+        },
+        {
+          "client_id": "299637047634-c8pm4vok6g81eoik7rrv8kb3qkmmlcev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5AurwBjaQlsL91KFSyXxh_ps25RTVSqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299637047634-c8pm4vok6g81eoik7rrv8kb3qkmmlcev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

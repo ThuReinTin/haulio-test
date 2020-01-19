@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="homeFragmentViewModel"
+            type="tin.thurein.haulio_test.viewmodels.HomeFragmentViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".fragments.HomeFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:padding="@dimen/spacing_normal"
+            android:textColor="@android:color/black"
+            android:text="@{homeFragmentViewModel.jobTitle}"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srlJobs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isRefresh="@{homeFragmentViewModel.refresh}">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvJobs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

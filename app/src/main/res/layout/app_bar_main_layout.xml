@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="mainViewModel"
+            type="tin.thurein.haulio_test.viewmodels.MainViewModel" />
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:popupTheme="@style/Theme.AppCompat.NoActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_height"
+            app:buttonGravity="bottom|top"
+            android:background="@color/colorPrimary"
+            app:navigationIcon="@drawable/toolbar_icon"
+            app:popupTheme="@style/Theme.AppCompat.NoActionBar">
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="@dimen/app_bar_logo_width"
+                android:layout_height="match_parent"
+                android:src="@drawable/haulio_white"
+                android:layout_gravity="center" />
+
+            <ImageView
+                android:id="@+id/ivLogout"
+                android:layout_width="@dimen/app_bar_btn_width"
+                android:layout_height="match_parent"
+                android:padding="@dimen/spacing_small"
+                android:layout_gravity="end|right"
+                android:src="@drawable/log_out_icon"
+                android:onClick="@{() -> mainViewModel.ivSignOutOnClick()}"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/fl_main"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</layout>

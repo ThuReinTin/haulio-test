@@ -1,0 +1,2 @@
+include ':app', ':domain', ':utils', ':data'
+rootProject.name='haulio-test'

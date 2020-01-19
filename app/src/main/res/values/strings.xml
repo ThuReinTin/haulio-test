@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">haulio-test</string>
+    <string name="google_client_id">299637047634-fv11ru9oh8a79sep0lgt52mu3ilbnuu3.apps.googleusercontent.com</string>
+    <string name="google_client_secret">zJfwgjwEu78jMatP7W-0LHOC</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="jobs_available">Jobs Available</string>
+    <string name="accept">Accept</string>
+
+    <string-array name="nav_drawer_list">
+        <item>Profile</item>
+        <item>Go to map</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="accepted_jobs">Accepted jobs</string>
+    <string name="search">Search</string>
+
+</resources>

@@ -1,0 +1,74 @@
+ext {
+
+    // Android
+    minSdkVersion = 16
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    buildToolVersion = "29.0.2"
+    testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+
+    room = 'androidx.room:room-runtime:2.2.3'
+    rxRoom = 'androidx.room:room-rxjava2:2.2.3'
+    roomKtx = 'androidx.room:room-ktx:2.2.3'
+    roomAnnotationProcessor = 'androidx.room:room-compiler:2.2.3'
+    roomTest = 'androidx.room:room-testing:2.2.3'
+
+    lifecycleProcessor = 'androidx.lifecycle:lifecycle-common-java8:2.1.0'
+    lifecycle = 'androidx.lifecycle:lifecycle-runtime:2.1.0'
+
+    rxJava = 'io.reactivex.rxjava2:rxjava:2.2.17'
+    rxAndroid = 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    retrofit = 'com.squareup.retrofit2:retrofit:2.6.2'
+    retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:2.6.2"
+    retrofitRxJava2Adapter = "com.squareup.retrofit2:adapter-rxjava2:2.6.2"
+    retrofitLoggingInterceptors = "com.squareup.okhttp3:logging-interceptor:3.8.0"
+
+    googleGson = 'com.google.code.gson:gson:2.8.6'
+    json = 'org.json:json:20190722'
+
+    commonText = 'org.apache.commons:commons-text:1.6'
+
+    dagger = 'com.google.dagger:dagger-android:2.21'
+    daggerSupport = 'com.google.dagger:dagger-android-support:2.21'
+    daggerProcessor = 'com.google.dagger:dagger-android-processor:2.21'
+    daggerCompiler = 'com.google.dagger:dagger-compiler:2.21'
+    kaptDagger = 'com.google.dagger:dagger-compiler:2.21'
+
+    javaxAnnotation = 'javax.annotation:jsr250-api:1.0'
+    javaxInject = 'javax.inject:javax.inject:1'
+
+    //
+    recyclerView = 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // compat
+    androidxCompat = 'androidx.appcompat:appcompat:1.1.0'
+
+    // kotlin
+    androidxKtx = 'androidx.core:core-ktx:1.1.0'
+    kotlinStdlib = 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61'
+
+    // constraint
+    constraintlayout = 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // Testing
+    junit = 'junit:junit:4.12'
+    androidxJunit =  'androidx.test.ext:junit:1.1.1'
+    mockito = 'org.mockito:mockito-core:2.8.47'
+    espresso = 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestRunner = 'androidx.test:runner:1.1.0-alpha4'
+
+    //swipe refresh layout
+    swipeRefreshLayout = 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+
+    legacySupport = 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    googleMap = 'com.google.android.gms:play-services-maps:17.0.0'
+    googleAuth = 'com.google.android.gms:play-services-auth:17.0.0'
+
+    googleGmsService = 'com.google.android.gms:play-services-location:17.0.0'
+
+    glide = 'com.github.bumptech.glide:glide:4.4.0'
+    glideCompiler = 'com.github.bumptech.glide:compiler:4.4.0'
+
+    circleImageView = 'de.hdodenhof:circleimageview:3.0.2'
+}

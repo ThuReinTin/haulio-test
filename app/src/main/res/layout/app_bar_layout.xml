@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="headerViewModel"
+            type="tin.thurein.haulio_test.viewmodels.HeaderViewModel" />
+    </data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_bar_height"
+    android:background="@color/colorPrimary">
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/app_bar_btn_width"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_small"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@{headerViewModel.ivLeftSrc}"
+        android:onClick="@{() -> headerViewModel.ivLeftOnClick()}"/>
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="@dimen/app_bar_logo_width"
+        android:layout_height="match_parent"
+        android:src="@drawable/haulio_white"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/ivLogout"
+        android:layout_width="@dimen/app_bar_btn_width"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_small"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/log_out_icon"
+        android:onClick="@{() -> headerViewModel.ivSignOutOnClick()}"/>
+</RelativeLayout>
+</layout>
