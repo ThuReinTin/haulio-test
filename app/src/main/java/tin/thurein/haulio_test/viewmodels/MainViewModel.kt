@@ -1,7 +1,6 @@
 package tin.thurein.haulio_test.viewmodels
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.MaybeObserver
 import io.reactivex.Observer
@@ -14,7 +13,6 @@ import tin.thurein.domain.models.Progress
 import tin.thurein.domain.usecases.GetRemoteJobsUseCase
 import tin.thurein.domain.usecases.SaveJobsUseCase
 import tin.thurein.haulio_test.common.NetworkUtils
-import java.lang.Exception
 import javax.inject.Inject
 
 class MainViewModel: HeaderViewModel {

@@ -7,9 +7,6 @@ import android.util.Log
 
 object NetworkUtils {
     fun isNetworkAvailabe(context: Context): Boolean {
-        if (context == null) {
-            return false
-        }
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         // if no network is available networkInfo will be null, otherwise check if we are connected

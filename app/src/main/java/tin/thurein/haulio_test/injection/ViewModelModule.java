@@ -10,7 +10,6 @@ import dagger.Binds;
 import dagger.MapKey;
 import dagger.Module;
 import dagger.multibindings.IntoMap;
-import tin.thurein.haulio_test.viewmodels.DrawerViewModel;
 import tin.thurein.haulio_test.viewmodels.HomeFragmentViewModel;
 import tin.thurein.haulio_test.viewmodels.MainViewModel;
 import tin.thurein.haulio_test.viewmodels.MapsViewModel;

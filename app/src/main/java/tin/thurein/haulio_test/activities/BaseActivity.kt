@@ -6,9 +6,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import tin.thurein.haulio_test.App
 
 open class BaseActivity: AppCompatActivity() {
-    //    @JvmField
-//    @Inject
-//    var
     protected fun <T> gotoActivity(clazz: Class<T>) {
         val intent = Intent(this, clazz)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK

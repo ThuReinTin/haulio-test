@@ -19,9 +19,6 @@ public class JSONUtils {
         gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .serializeNulls()
-//                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeJsonConverter())
-//                .registerTypeAdapter(LocalDate.class, new LocalDateJsonConverter())
-//                .registerTypeAdapter(LocalTime.class, new LocalTimeJsonConverter())
                 .create();
     }
 

@@ -1,13 +1,10 @@
 package tin.thurein.haulio_test.activities
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -28,7 +25,6 @@ import tin.thurein.haulio_test.listeners.BaseListener
 import tin.thurein.haulio_test.listeners.HomeFragmentListener
 import tin.thurein.haulio_test.viewmodels.MainViewModel
 import javax.inject.Inject
-import kotlin.math.sign
 
 class MainActivity : BaseActivity(), HomeFragmentListener {
 

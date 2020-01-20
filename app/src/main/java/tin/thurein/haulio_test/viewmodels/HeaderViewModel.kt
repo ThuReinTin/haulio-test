@@ -1,7 +1,6 @@
 package tin.thurein.haulio_test.viewmodels
 
 import android.graphics.drawable.Drawable
-import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.MutableLiveData

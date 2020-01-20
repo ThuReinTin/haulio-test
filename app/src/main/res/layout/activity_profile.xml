@@ -28,6 +28,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{profileViewModel.givenName}"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:gravity="center"
             android:padding="@dimen/spacing_small"/>
 
         <TextView

@@ -1,6 +1,5 @@
 package tin.thurein.haulio_test.viewmodels
 
-import android.net.Uri
 import androidx.databinding.Bindable
 import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.MutableLiveData
@@ -29,7 +28,7 @@ class ProfileViewModel: HeaderViewModel {
 
     @Bindable
     fun getGivenName(): String {
-        return "Given name : ${App.givenName}"
+        return "${App.givenName}"
     }
 
     @Bindable

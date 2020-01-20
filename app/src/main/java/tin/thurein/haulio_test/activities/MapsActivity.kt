@@ -1,17 +1,12 @@
 package tin.thurein.haulio_test.activities
 
 import android.app.Activity
-import android.app.AlertDialog
-import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
-import android.location.LocationManager
 import android.os.Bundle
-import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -22,7 +17,6 @@ import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.LocationSettingsRequest
-import com.google.android.gms.location.LocationSettingsResponse
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -85,6 +79,8 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback, LocationListener, JobSe
             resultJobs.clear()
             resultJobs.add(mapsViewModel.job!!)
             updateJobMarkers()
+            val position = LatLng(mapsViewModel.job?.geolocation?.latitude!!, mapsViewModel.job?.geolocation?.longitude!!)
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 13.0f))
         }
     }
 
